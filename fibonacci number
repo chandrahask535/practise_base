@@ -1,0 +1,16 @@
+def fibonacci(n):
+    if (n <= 0):
+        return 0
+
+    fibo = [0] * (n+1)
+    fibo[1] = 1
+    sm = fibo[0] + fibo[1]
+    for x in range(2, n+1):
+        fibo[x] = fibo[x-1] + fibo[x-2]
+        sm = sm + fibo[x]
+    return sm
+
+#testing the function
+inpt = int(input("enter a number"))
+soln = fibonacci(inpt)
+print("the fibonacci  value of the entered number is ",soln)
