@@ -1,4 +1,4 @@
-def mountain(n):
+def diamond(n):
     for i in range(n-1):
         for j in range(i,n):
             print(' ', end=' ')
@@ -17,4 +17,4 @@ def mountain(n):
         print()
          
 val = int(input("ENter the value:"))
-triangle = mountain(val)
+shape = diamond(val)
