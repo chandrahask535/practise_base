@@ -1,0 +1,32 @@
+def main():
+    # Input reading
+    s = input().strip()  # Binary string
+    v = list(map(int, input().split()))  # Worth values
+
+    n = len(s)
+    removal_worth = 0  # Total worth of removed characters
+
+    # Initialize with the first character
+    prev_char = s[0]
+    prev_worth = v[0]
+
+    for i in range(1, n):
+        if s[i] == prev_char:
+            # If not alternating, retain the higher-worth character
+            if v[i] > prev_worth:
+                removal_worth += prev_worth
+                prev_char = s[i]  # Update to current character
+                prev_worth = v[i]
+            else:
+                removal_worth += v[i]
+        else:
+            # Alternate, move to the next character
+            prev_char = s[i]
+            prev_worth = v[i]
+
+    # Output the total worth of removed characters
+    print(removal_worth, end="")  # Ensure no additional newline or spaces
+
+
+if __name__ == "__main__":
+    main()
